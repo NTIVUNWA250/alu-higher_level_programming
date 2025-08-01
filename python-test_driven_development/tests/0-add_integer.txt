@@ -1,0 +1,37 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Test add_integer('1', '2')
+>>> try:
+...     add_integer('1', '2')
+... except TypeError as e:
+...     print(e)
+a must be an integer
+
+Test add_integer(1, '2')
+>>> try:
+...     add_integer(1, '2')
+... except TypeError as e:
+...     print(e)
+b must be an integer
+
+Test add_integer(1.2, 2)
+>>> add_integer(1.2, 2)
+3
+
+Test add_integer(1.1)
+>>> add_integer(1.1)
+99
+
+Test inf float
+>>> try:
+...     add_integer(float('inf'), 2)
+... except OverflowError as e:
+...     print(e)
+cannot convert float infinity to integer
+
+Test nan float
+>>> try:
+...     add_integer(float('nan'), 2)
+... except ValueError as e:
+...     print(e)
+cannot convert float NaN to integer

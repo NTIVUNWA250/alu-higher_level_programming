@@ -1,0 +1,31 @@
+>>> print_square = __import__('4-print_square').print_square
+
+Test valid input
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square(0)
+
+
+Test invalid input
+>>> try:
+...     print_square(-1)
+... except ValueError as e:
+...     print(e)
+size must be >= 0
+
+>>> try:
+...     print_square(1.5)
+... except TypeError as e:
+...     print(e)
+size must be an integer
+
+>>> try:
+...     print_square()
+... except TypeError as e:
+...     print(e)
+print_square() missing 1 required positional argument: 'size'
